@@ -7,11 +7,11 @@ yarn-error.log*
 lerna-debug.log*
 
 
-// ijk
+
 node_modules/
 dist/
 .env
-// ijk
+
 
 
 # Diagnostic reports (https://nodejs.org/api/report.html)
