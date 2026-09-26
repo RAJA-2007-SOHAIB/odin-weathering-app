@@ -1,4 +1,6 @@
 @import url(https://unpkg.com/modern-normalize@1.1.0/modern-normalize.css);
+/* style.css */
+
 h1,
 h2,
 h3,
@@ -24,6 +26,169 @@ h4,
 h5 {
   font-size: inherit;
   font-weight: inherit;
+}
+
+/* --- Base Theme & Setup --- */
+:root {
+  --primary-color: #2563eb;
+  --bg-gradient: linear-gradient(135deg, #8bc6ec 0%, #9599e2 100%);
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --text-dark: #1e293b;
+  --text-muted: #64748b;
+  --border-radius: 16px;
+}
+
+body {
+  font-family:
+    system-ui,
+    -apple-system,
+    sans-serif;
+  background-image: var(--bg-gradient);
+  color: var(--text-dark);
+  min-height: 100vh;
+  /* Center the app on the screen */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --- App Container --- */
+main {
+  background-color: var(--card-bg);
+  backdrop-filter: blur(10px); /* Glass effect */
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 420px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: var(--primary-color);
+}
+
+/* --- Search Form --- */
+form {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+label {
+  flex: 1; /* Takes up remaining space */
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+input:focus {
+  border-color: var(--primary-color);
+}
+
+button {
+  padding: 0.75rem 1.5rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #1d4ed8;
+}
+
+/* --- Main Weather Card --- */
+.weather-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.location {
+  font-size: 1.25rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  width: 96px;
+  height: 96px;
+  object-fit: contain;
+}
+
+.temp {
+  font-size: 3.5rem;
+  font-weight: 800;
+  margin: 0.5rem 0;
+  letter-spacing: -1px;
+}
+
+.condition-text {
+  font-size: 1.1rem;
+  color: var(--text-muted);
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+}
+
+/* --- Extra Info Grid --- */
+.more-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-top: 1.5rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.more-info > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  flex: 1;
+}
+
+.catImg {
+  width: 24px;
+  height: 24px;
+  opacity: 0.6;
+}
+
+.category {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.value {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+/* --- Error Div --- */
+.error-div {
+  margin-top: 1rem;
+  color: #ef4444;
+  font-weight: 600;
+  text-align: center;
+  min-height: 24px; /* Keeps the UI from jumping around */
 }
 
 
