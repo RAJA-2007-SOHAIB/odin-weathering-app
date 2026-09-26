@@ -75,7 +75,7 @@ const WeatherData = class {
 
     const tempData = this.tempGetter(type);
     const feelsLike = `Feels like ${tempData.feelsLike}`;
-    const temp = `Temperature: ${tempData.temp}`;
+    const temp = `${tempData.temp}`;
 
     return {
       location,

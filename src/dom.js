@@ -35,3 +35,28 @@ const domElements = {
     self: document.querySelector('.error-div'),
   },
 };
+
+const renderWeather = function (getDisplayData) {
+  const section = domElements.section;
+
+  section.location.textContent = getDisplayData.location;
+  section.icon.src = getDisplayData.conditionIcon;
+  section.temp.textContent = getDisplayData.temp;
+  section.conditionText.textContent = getDisplayData.conditionText;
+
+  const moreInfo = section.moreInfo;
+  const humidity = moreInfo.humidity;
+  const wind = moreInfo.wind;
+  const feelsLike = moreInfo.feelsLike;
+
+  humidity.img.src = '#';
+  humidity.val.textContent = getDisplayData.humidity;
+
+  wind.img.src = '#';
+  wind.val.textContent = getDisplayData.windSpeed;
+
+  feelsLike.img.src = '#';
+  feelsLike.val.textContent = getDisplayData.feelsLike;
+};
+
+export { renderWeather };
