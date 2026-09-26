@@ -190,3 +190,58 @@ button:hover {
   text-align: center;
   min-height: 24px; /* Keeps the UI from jumping around */
 }
+
+/* --- New Additions --- */
+
+.weather-card {
+  position: relative; /* Anchor for the absolute toggle button */
+}
+
+.date-time {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.unit-toggle {
+  position: absolute;
+  top: 1.5rem;
+  right: 1.5rem;
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.unit-toggle:hover {
+  background: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+/* --- Will It Rain Banner --- */
+.will-it-rain {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.75rem;
+  background-color: rgba(
+    37,
+    99,
+    235,
+    0.08
+  ); /* Subtle tint of your primary color */
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  color: var(--primary-color);
+  border-radius: 8px;
+  text-align: center;
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}

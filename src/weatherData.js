@@ -76,6 +76,13 @@ const WeatherData = class {
     const tempData = this.tempGetter(type);
     const feelsLike = `Feels like ${tempData.feelsLike}`;
     const temp = `${tempData.temp}`;
+    const willItRain = this.willItRain;
+    let willRain;
+    if (willItRain === 0) {
+      willRain = 'Nah, No rain today';
+    } else {
+      willRain = `Yeah! ${willItRain}% chance of rain today`;
+    }
 
     return {
       location,
@@ -87,6 +94,7 @@ const WeatherData = class {
       cloudCover,
       feelsLike,
       temp,
+      willRain,
     };
   }
 };

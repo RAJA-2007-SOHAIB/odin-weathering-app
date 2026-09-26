@@ -8,7 +8,9 @@ const domElements = {
   },
   section: {
     self: document.querySelector('section'),
+    unitToggle: document.getElementById('unitToggle'),
     location: document.querySelector('.location'),
+    dateAndTime: document.querySelector('.date-time'),
     icon: document.querySelector('.icon'),
     temp: document.querySelector('.temp'),
     conditionText: document.querySelector('.condition-text'),
@@ -30,6 +32,7 @@ const domElements = {
         val: document.querySelector('.feels-temp'),
       },
     },
+    willItRain: document.querySelector('.will-it-rain'),
   },
   errorDiv: {
     self: document.querySelector('.error-div'),
@@ -43,20 +46,20 @@ const renderWeather = function (getDisplayData) {
   section.icon.src = getDisplayData.conditionIcon;
   section.temp.textContent = getDisplayData.temp;
   section.conditionText.textContent = getDisplayData.conditionText;
+  section.dateAndTime.textContent = getDisplayData.dateAndTime;
 
   const moreInfo = section.moreInfo;
   const humidity = moreInfo.humidity;
   const wind = moreInfo.wind;
   const feelsLike = moreInfo.feelsLike;
 
-  humidity.img.src = '#';
   humidity.val.textContent = getDisplayData.humidity;
 
-  wind.img.src = '#';
   wind.val.textContent = getDisplayData.windSpeed;
 
-  feelsLike.img.src = '#';
   feelsLike.val.textContent = getDisplayData.feelsLike;
+
+  section.willItRain.textContent = getDisplayData.willRain;
 };
 
-export { renderWeather };
+export { renderWeather, domElements };
