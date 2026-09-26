@@ -40,7 +40,7 @@ form.addEventListener('submit', (event) => {
 });
 
 const toggleButton = domElements.section.unitToggle;
-toggleButton.addEventListener('click', (event) => {
+toggleButton.addEventListener('click', () => {
   if (currentUnit.toLocaleLowerCase() === 'c') {
     if (currentWeatherData) {
       currentUnit = 'f';
